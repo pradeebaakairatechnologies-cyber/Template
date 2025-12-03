@@ -11,313 +11,923 @@
     <!-- AOS CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" />
 
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
-        .navbar-brand{
-            font-weight:700;
-            letter-spacing:3px;
+        .navbar-brand {
+            font-weight: 700;
+            letter-spacing: 3px;
         }
-        .navbar-nav .nav-link{
-            font-size:18px;
-            margin-right:18px;
+        .navbar-nav .nav-link {
+            font-size: 18px;
+            margin-right: 18px;
         }
         @media(max-width:991px){
-            .navbar-nav .nav-link{
-                margin-right:0;
-                padding:12px 0;
+            .navbar-nav .nav-link {
+                margin-right: 0;
+                padding: 12px 0;
             }
         }
-            .navbar-nav .nav-link:hover{
-            color:#1BC6B4 !important;
+        .navbar-nav .nav-link:hover {
+            color: #1BC6B4 !important;
         }
-            .dropdown-menu{
-            border:none !important;
-            box-shadow:0 4px 12px rgba(0,0,0,0.15);
+        .dropdown-menu {
+            border: none !important;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
         }
-        .dropdown-item:hover{
-            background-color:#1BC6B4 !important;
-            color:#fff !important;
+        .dropdown-item:hover {
+            background-color: #1BC6B4 !important;
+            color: #fff !important;
         }
-            .navbar-toggler{
-            border:none !important;
-            box-shadow:none !important;
+        .navbar-toggler {
+            border: none !important;
+            box-shadow: none !important;
         }
 
-            .hero {
-      height: 100vh;
-      background: url('assets/images/green.jpg') center/cover no-repeat;
-      position: relative;
-      display: flex;
-      align-items: center;
-      color: #fff;
-    }
+        /* HERO SECTION */
+        .hero {
+            width: 100%;
+            height: 100vh;
+            background: url('assets/images/green.jpg') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            padding-left: 80px; /* left spacing */
+            color: #fff;
+            position: relative;
+        }
 
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      color:black;
-    }
+        .hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+        }
 
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      max-width: 650px;
-    }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 650px;
+        }
 
-    html {
-      scroll-behavior: smooth; /* Smooth scroll */
-    }
-    .btn-green{
-      background: #1BC6B4;
-      color:white;
-    }
-    .btn-green:hover{
-      background: rgb(255, 255, 255);
-      color:#1BC6B4;
-      border:1px solid black;
-    }
-    .head-text{
-       color:#1BC6B4;
-    }
+        html {
+            scroll-behavior: smooth;
+        }
 
-    .services-section {
-  padding: 80px 0;
-  background: #fff;
+        .btn-green {
+            background: #1BC6B4;
+            color: white;
+        }
+        .btn-green:hover {
+            background: #fff;
+            color: #1BC6B4;
+            border: 1px solid black;
+        }
+        .head-text {
+            color: #1BC6B4;
+        }
+
+        /* SERVICES */
+        .services-section {
+            padding: 4px 80px 0 0;
+            background: #fff;
+            margin-top: 10px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin: 100px 0 60px; /* Added spacing above */
+        }
+        .section-title h2 span {
+            color: #1BC6B4;
+            font-weight: 700;
+        }
+
+        .service-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 40px 25px;
+            text-align: center;
+            transition: 0.3s ease;
+            height: 100%;
+             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            border: 1px solid #e4e4e4;
+        }
+        .service-card:hover {
+            transform: translateY(-8px) scale(1.03);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            background: #1BC6B4;
+            color: #fff !important;
+            border-color: #1BC6B4;
+        }
+        .service-card img {
+            width: 60px;
+            margin-bottom: 20px;
+            background: #1BC6B4;
+            padding: 12px;
+            border-radius: 50%;
+            transition: 0.3s ease;
+        }
+        .service-card:hover img {
+            background: #fff;
+        }
+        .service-card h4 {
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #000;
+            transition: 0.3s;
+        }
+        .service-card:hover h4 {
+            color: #fff;
+        }
+        .service-card p {
+            margin-bottom: 20px;
+            color: #000;
+            transition: 0.3s;
+        }
+        .service-card:hover p {
+            color: #fff;
+        }
+        .learn-more {
+            text-decoration: none;
+            color: #1BC6B4;
+            font-weight: 600;
+        }
+        .service-card:hover .learn-more {
+            color: #fff;
+        }
+
+        /* ABOUT */
+
+        .about-section h2 {
+            font-weight: 700;
+        }
+        .about-section .achievement h4 {
+            color: #000;
+            font-weight: 700;
+        }
+        .about-section h4 {
+            color: #1BC6B4 !important;
+        }
+
+        .btn-custom {
+            background-color: #1BC6B4;
+            color: #fff;
+            border: none;
+        }
+        .btn-custom:hover {
+            background-color: #17ad9e;
+            color: #fff;
+        }
+
+
+                .testimonial-card {
+            background: #fff;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .testimonial-card img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+            border: 3px solid #1BC6B4;
+        }
+        .stars i {
+            color: #f4c430;
+        }
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            filter: invert(1);
+            
+        }
+
+        .cta-section {
+  text-align: center;
+  padding: 40px 20px;
+  width:100%;
+    background:#1BC6B4;
+  
 }
 
-.service-card {
-  background: #fff;
+.top-badge {
+  background: #000000;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 50px;
+  color: #fff;
+  font-size: 15px;
+  cursor: pointer;
+  opacity: 0.9;
+}
+
+.title {
+  margin-top: 25px;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.title span {
+  background: linear-gradient(90deg, #4dc515, #1272a2, #862cba);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+  margin-top: 20px;
+  font-size: 18px;
+  opacity: 0.85;
+}
+
+.cta-button {
+  margin-top: 30px;
+  padding: 15px 40px;
   border-radius: 12px;
-  padding: 40px 25px;
-  text-align: center;
-  transition: 0.3s ease;
-  height: 100%;
-  box-shadow: 2px 2px 2px 2px #e4e4e4;
-  border: 1px solid #e4e4e4;
-}
-
-/* Hover effect - whole card turns green */
-.service-card:hover {
-  transform: translateY(-8px) scale(1.03);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-  background: #1BC6B4;
-  color: #fff !important;
-  border-color: #1BC6B4;
-}
-
-/* Icon background */
-.service-card img {
-  width: 60px;
-  margin-bottom: 20px;
-  background: #1BC6B4;
-  padding: 12px;
-  border-radius: 50%;
-  transition: 0.3s ease;
-}
-
-/* Icon turns white on hover */
-.service-card:hover img {
-  background: #fff;
-}
-
-/* Title */
-.service-card h4 {
-  font-weight: 700;
-  margin-bottom: 15px;
-  color: #000;
-  transition: 0.3s ease;
-}
-
-/* Title white on hover */
-.service-card:hover h4 {
-  color: #fff;
-}
-
-/* Paragraph text */
-.service-card p {
-  margin-bottom: 20px;
-  color: #000;
-  transition: 0.3s ease;
-}
-
-/* Paragraph turns white on hover */
-.service-card:hover p {
-  color: #fff;
-}
-
-/* Learn more link */
-.learn-more {
-  text-decoration: none;
-  color: #1BC6B4;
+  border: none;
+  font-size: 18px;
   font-weight: 600;
-  transition: 0.3s ease;
-}
-
-/* Link becomes white on hover */
-.service-card:hover .learn-more {
+  cursor: pointer;
+   background: linear-gradient(90deg, #4dc515, #1272a2, #862cba);
   color: #fff;
+  transition: 0.3s;
 }
 
-.section-title {
-  text-align: center;
-  margin-bottom: 60px;
+.cta-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(255, 70, 100, 0.5);
 }
 
-.section-title h2 span {
-  color: #1BC6B4;
-  font-weight: 700;
+.features {
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  opacity: 0.9;
+  font-size: 16px;
 }
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 36px;
+  }
+  .features {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+.carousel-item
+{
+ padding: 40px 0 !important;  
+
+}  
+
+ footer {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: #ffffff;
+            padding: 60px 0 0 0;
+            margin-top: auto;
+        }
+        
+        .footer-content {
+            padding-bottom: 40px;
+        }
+        
+        .footer-logo {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            background: linear-gradient(45deg, #00d4ff, #00ff88);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .footer-description {
+            color: #b8c9e8;
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .footer-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(90deg, #00d4ff, #00ff88);
+            border-radius: 2px;
+        }
+        
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: #b8c9e8;
+            text-decoration: none;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        
+        .footer-links a:hover {
+            color: #00d4ff;
+            transform: translateX(5px);
+        }
+        
+        .footer-links i {
+            margin-right: 8px;
+            width: 15px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: start;
+            margin-bottom: 15px;
+            color: #b8c9e8;
+            font-size: 14px;
+        }
+        
+        .contact-item i {
+            margin-right: 12px;
+            margin-top: 3px;
+            color: #00d4ff;
+            font-size: 16px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 12px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+        
+        .social-links a:hover {
+            background: linear-gradient(135deg, #00d4ff, #00ff88);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 212, 255, 0.4);
+        }
+        
+        .newsletter-form {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        
+        .newsletter-form input {
+            flex: 1;
+            padding: 12px 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.1);
+            color: #ffffff;
+            font-size: 14px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .newsletter-form input::placeholder {
+            color: #b8c9e8;
+        }
+        
+        .newsletter-form input:focus {
+            outline: none;
+            border-color: #00d4ff;
+            background: rgba(255, 255, 255, 0.15);
+        }
+        
+        .newsletter-form button {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            background: linear-gradient(135deg, #00d4ff, #00ff88);
+            color: #1e3c72;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+        
+        .newsletter-form button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 212, 255, 0.4);
+        }
+        
+        .footer-bottom {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 25px 0;
+            margin-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .footer-bottom-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .copyright {
+            color: #b8c9e8;
+            font-size: 14px;
+        }
+        
+        .footer-bottom-links {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .footer-bottom-links a {
+            color: #b8c9e8;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-bottom-links a:hover {
+            color: #00d4ff;
+        }
+        
+        @media (max-width: 768px) {
+            .footer-title::after {
+                width: 40px;
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
+            }
+            
+            .newsletter-form button {
+                width: 100%;
+            }
+            
+            .footer-bottom-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .footer-bottom-links {
+                justify-content: center;
+            }
+        }
     </style>
 </head>
 <body>
 
-<!-- HEADER START -->
+<!-- HEADER -->
 <nav class="navbar navbar-expand-lg bg-white shadow-sm py-3 fixed-top" data-aos="fade-down">
-  <div class="container">
-
-    <!-- Logo -->
-    <a class="navbar-brand" href="#">
-        YOUR<span style="color:#1BC6B4">LOGO</span>
-    </a>
-
-    <!-- Mobile Toggle -->
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <!-- Nav Items -->
-    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-      <ul class="navbar-nav">
-
-        <li class="nav-item">
-          <a class="nav-link" href="index.html">Home</a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link" href="about.html">About</a>
-        </li>
-
-        <!-- Service Dropdown -->
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="service.html" role="button" data-bs-toggle="dropdown">Service</a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Service 1</a></li>
-            <li><a class="dropdown-item" href="#">Service 2</a></li>
-            <li><a class="dropdown-item" href="#">Service 3</a></li>
-          </ul>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link" href="portfolio.html">Portfolio</a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link" href="contact.html">Contact</a>
-        </li>
-
-      </ul>
-    </div>
-  </div>
-</nav>
-<!-- HERO SECTION -->
-  <section class="hero d-flex">
     <div class="container">
-      <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
-        <h1 class="display-4 fw-bold text-dark mb-4">Digital <span class="head-text">Marketing</span> Agency</h1>
+
+        <a class="navbar-brand" href="#">
+            YOUR<span style="color:#1BC6B4">LOGO</span>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+
+                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="service.html" role="button" data-bs-toggle="dropdown">
+                        Service
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Service 1</a></li>
+                        <li><a class="dropdown-item" href="#">Service 2</a></li>
+                        <li><a class="dropdown-item" href="#">Service 3</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
+
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+
+            </ul>
+        </div>
+
+    </div>
+</nav>
+
+<!-- HERO SECTION (FULL WIDTH) -->
+<section class="hero d-flex mb-5">
+    <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
+        <h1 class="display-4 fw-bold text-dark mb-4">
+            Digital <span class="head-text">Marketing</span> Agency
+        </h1>
+
         <p class="mt-3 text-dark mb-5">
-                      We build powerful digital marketing and local SEO services designed to position you as an industry leader, attracting the perfect audience right here in Tamil Nadu.
+            We build powerful digital marketing and local SEO services designed to position you 
+            as an industry leader, attracting the perfect audience right here in Tamil Nadu.
         </p>
 
         <div class="mt-4 d-flex gap-3">
-          <a href="#section1" class="btn btn-green btn-lg px-4">Primary Action</a>
-          <a href="#section2" class="btn btn-outline-dark btn-lg px-4">Secondary Action</a>
+            <a href="#section1" class="btn btn-green btn-lg px-4">Primary Action</a>
+            <a href="#section2" class="btn btn-outline-dark btn-lg px-4">Secondary Action</a>
         </div>
-      </div>
     </div>
-  </section>
-
-
-  <section class="services-section">
-  <div class="container">
-
-    <!-- Section Header -->
-    <div class="section-title" data-aos="fade-up">
-      <h2>Our <span>Awesome</span> Services</h2>
-
-    </div>
-
-    <div class="row g-4">
-      
-      <!-- Service Item 1 -->
-      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-        <div class="service-card">
-          <img src="https://cdn-icons-png.flaticon.com/512/3524/3524659.png" alt="icon">
-          <h4>Highly Customizable</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          <a href="#" class="learn-more">Learn More →</a>
-        </div>
-      </div>
-
-      <!-- Service Item 2 -->
-      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-        <div class="service-card">
-          <img src="https://cdn-icons-png.flaticon.com/512/1048/1048953.png" alt="icon">
-          <h4>Fully Responsive Layout</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          <a href="#" class="learn-more">Learn More →</a>
-        </div>
-      </div>
-
-      <!-- Service Item 3 -->
-      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-        <div class="service-card">
-          <img src="https://cdn-icons-png.flaticon.com/512/747/747376.png" alt="icon">
-          <h4>User Experience</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          <a href="#" class="learn-more">Learn More →</a>
-        </div>
-      </div>
-
-      <!-- Service Item 4 -->
-      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
-        <div class="service-card">
-          <img src="https://cdn-icons-png.flaticon.com/512/1828/1828884.png" alt="icon">
-          <h4>Creative Web Design</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          <a href="#" class="learn-more">Learn More →</a>
-        </div>
-      </div>
-
-      <!-- Service Item 5 -->
-      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
-        <div class="service-card">
-          <img src="https://cdn-icons-png.flaticon.com/512/1828/1828673.png" alt="icon">
-          <h4>Unique and Clean</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          <a href="#" class="learn-more">Learn More →</a>
-        </div>
-      </div>
-
-      <!-- Service Item 6 -->
-      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
-        <div class="service-card">
-          <img src="https://cdn-icons-png.flaticon.com/512/833/833472.png" alt="icon">
-          <h4>Creative Ideas</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          <a href="#" class="learn-more">Learn More →</a>
-        </div>
-      </div>
-
-    </div>
-  </div>
 </section>
-  
-  <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
+
+<!-- ABOUT SECTION -->
+<section class="about-section px-5 mt-5">
+    <div class="container-fluid">
+        <div class="row align-items-center">
+
+            <div class="col-lg-6 mt-5" data-aos="fade-right">
+                <h2 class="mb-3">About Our Company</h2>
+                <p class="text-muted mb-4">
+                     Businesses Across Tamil Nadu trust our personalized digital solutions to increase local visibility 
+                     and quickly expand their audience. Join with Kaira Technologies now to dominate your market with confidence 
+                     and build a successful, high-performing online presence. 
+
+                </p>
+                                <p class="text-muted mb-4">
+                    Stop guessing, start growing. Our experts are on trend and results driven – we use only the most 
+                    cutting edge strategies to help you make a statement with your brand
+ 
+
+                </p>
+
+                <div class="row mb-4 text-center achievement">
+                    <div class="col-4">
+                        <h4>250+</h4>
+                        <p>Projects</p>
+                    </div>
+                    <div class="col-4">
+                        <h4>120+</h4>
+                        <p>Clients</p>
+                    </div>
+                    <div class="col-4">
+                        <h4>5 Years</h4>
+                        <p>Experience</p>
+                    </div>
+                </div>
+
+                <a href="about.html" class="btn btn-custom px-4 py-2">Learn More</a>
+            </div>
+
+            <div class="col-lg-6 ps-lg-5" data-aos="fade-left">
+                <img src="assets/images/about.jpg" alt="About Image" class="img-fluid rounded shadow">
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- SERVICES SECTION -->
+<section class="services-section">
+    <div class="container">
+
+        <div class="section-title" data-aos="fade-up">
+            <h2>Our <span>Awesome</span> Services</h2>
+        </div>
+
+        <div class="row g-4">
+
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="service-card">
+                    <img src="https://img.icons8.com/?size=100&id=8wE0o4jVTp9p&format=png&color=000000" alt="icon">
+                    <h4>Social Media Marketing</h4>
+                    <p>
+We create impactful social media strategies tailored to your brand. From content creation to targeted advertising, we help you connect with your audience and build meaningful engagement.</p>
+                    <a href="#" class="learn-more">Learn More →</a>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="service-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1048/1048953.png" alt="icon">
+                    <h4>Web Development</h4>
+                    <p>We design and develop modern, responsive websites that deliver exceptional user experiences. From business sites to eCommerce solutions, our focus is on performance, security, and scalability.</p>
+                    <a href="#" class="learn-more">Learn More →</a>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                <div class="service-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/747/747376.png" alt="icon">
+                    <h4>Search Engine Optimization</h4>
+                    <p>SEO helps your business appear in searches when customers are looking for products or services near them. We optimize your Google Business Profile, local keywords, and citations to make sure your business stands out in maps and search results.</p>
+                    <a href="#" class="learn-more">Learn More →</a>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                <div class="service-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1828/1828884.png" alt="icon">
+                    <h4>Creative Web Design</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <a href="#" class="learn-more">Learn More →</a>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+                <div class="service-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1828/1828673.png" alt="icon">
+                    <h4>Unique and Clean</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <a href="#" class="learn-more">Learn More →</a>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
+                <div class="service-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/833/833472.png" alt="icon">
+                    <h4>Creative Ideas</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <a href="#" class="learn-more">Learn More →</a>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<section class="py-5 mt-5">
+    <div class="container">
+
+        <h2 class="text-center fw-bold mb-4" data-aos="fade-up">What Our Clients Say</h2>
+
+        <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="6000">
+
+            <!-- Wrapper -->
+            <div class="carousel-inner">
+
+                <!-- Testimonial 1 -->
+                <div class="carousel-item active">
+                    <div class="testimonial-card mx-auto col-md-8" data-aos="fade-up">
+                        <img src="assets/images/client1.jpg" alt="Client Photo">
+                        <h5 class="fw-bold mb-1">Client Name 1</h5>
+                        <p class="text-muted mb-2">Founder, XYZ Company</p>
+
+                        <div class="stars mb-3">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                        </div>
+
+                        <p>
+                            “Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                            Ducimus, eligendi! Doloribus repellendus ullam!”
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="carousel-item">
+                    <div class="testimonial-card mx-auto col-md-8">
+                        <img src="assets/images/client2.jpg" alt="Client Photo">
+                        <h5 class="fw-bold mb-1">Client Name 2</h5>
+                        <p class="text-muted mb-2">CEO, ABC Group</p>
+
+                        <div class="stars mb-3">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                        </div>
+
+                        <p>
+                            “Amazing service! Highly professional team.”
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="carousel-item">
+                    <div class="testimonial-card mx-auto col-md-8">
+                        <img src="assets/images/client3.jpg" alt="Client Photo">
+                        <h5 class="fw-bold mb-1">Client Name 3</h5>
+                        <p class="text-muted mb-2">Manager, LMN Pvt Ltd</p>
+
+                        <div class="stars mb-3">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                        </div>
+
+                        <p>
+                            “Very satisfied with the quality of work and communication.”
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Testimonial 4 -->
+                <div class="carousel-item">
+                    <div class="testimonial-card mx-auto col-md-8">
+                        <img src="assets/images/client4.jpg" alt="Client Photo">
+                        <h5 class="fw-bold mb-1">Client Name 4</h5>
+                        <p class="text-muted mb-2">Director, PQR Agency</p>
+
+                        <div class="stars mb-3">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                        </div>
+
+                        <p>
+                            “One of the best experiences I've ever had with a team.”
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Testimonial 5 -->
+                <div class="carousel-item">
+                    <div class="testimonial-card mx-auto col-md-8">
+                        <img src="assets/images/client5.jpg" alt="Client Photo">
+                        <h5 class="fw-bold mb-1">Client Name 5</h5>
+                        <p class="text-muted mb-2">Entrepreneur</p>
+
+                        <div class="stars mb-3">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                        </div>
+
+                        <p>
+                            “Highly recommend! Fantastic results and great support.”
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Controls -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+
+            <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+
+        </div>
+    </div>
+</section>
+
+<section class= " cta-section mt-5">
+    <button class="top-badge">🚀 Start your journey today</button>
+
+    <h1 class="title">
+        Ready to Transform <br>
+        <span>Your Business?</span>
+    </h1>
+
+    <p class="subtitle">
+        Join thousands of satisfied customers who have already taken the first step. <br>
+        No commitment required — just results that speak for themselves.
+    </p>
+
+    <button class="cta-button">
+        Get Started →
+    </button>
+
+</section>
+
+
+<!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="row g-4">
+                    <!-- Company Info -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="footer-logo">DigiMarket Pro</div>
+                        <p class="footer-description">
+                            Transforming businesses through innovative digital marketing strategies. 
+                            We help brands grow their online presence and achieve measurable results.
+                        </p>
+                        <div class="social-links">
+                            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Quick Links -->
+                    <div class="col-lg-2 col-md-6">
+                        <h5 class="footer-title">Services</h5>
+                        <ul class="footer-links">
+                            <li><a href="#"><i class="fas fa-angle-right"></i>SEO Marketing</a></li>
+                            <li><a href="#"><i class="fas fa-angle-right"></i>Social Media</a></li>
+                            <li><a href="#"><i class="fas fa-angle-right"></i>Content Strategy</a></li>
+                            <li><a href="#"><i class="fas fa-angle-right"></i>PPC Advertising</a></li>
+                            <li><a href="#"><i class="fas fa-angle-right"></i>Email Marketing</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Resources -->
+                    <div class="col-lg-2 col-md-6">
+                        <h5 class="footer-title">Company</h5>
+                        <ul class="footer-links">
+                            <li><a href="#"><i class="fas fa-angle-right"></i>About Us</a></li>
+                            <li><a href="#"><i class="fas fa-angle-right"></i>Our Team</a></li>
+                            <li><a href="#"><i class="fas fa-angle-right"></i>Case Studies</a></li>
+                            <li><a href="#"><i class="fas fa-angle-right"></i>Blog</a></li>
+                            <li><a href="#"><i class="fas fa-angle-right"></i>Careers</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Contact & Newsletter -->
+                    <div class="col-lg-4 col-md-6">
+                        <h5 class="footer-title">Contact Us</h5>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>123 Marketing Street, Digital City, DC 12345</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone-alt"></i>
+                            <span>+1 (555) 123-4567</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>info@digimarketpro.com</span>
+                        </div>
+                        
+                        <h6 class="footer-title mt-4" style="font-size: 16px;">Newsletter</h6>
+                        <form class="newsletter-form">
+                            <input type="email" placeholder="Your email address" required>
+                            <button type="submit">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="container">
+                    <div class="footer-bottom-content">
+                        <div class="copyright">
+                            © 2024 DigiMarket Pro. All rights reserved.
+                        </div>
+                        <div class="footer-bottom-links">
+                            <a href="#">Privacy Policy</a>
+                            <a href="#">Terms of Service</a>
+                            <a href="#">Cookie Policy</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<script>
     AOS.init();
-  </script>
+</script>
+
 </body>
 </html>
-
